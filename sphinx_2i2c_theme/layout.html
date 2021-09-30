@@ -7,41 +7,36 @@
             <span class="nav-logo-text">2i2c</span><span class="nav-subtitle-text">docs</span>
         </p>
       </a>
-
     </div>
 
     <div class="middle d-none d-md-flex">
-      <ul class="d-flex">
-        <li>
-          <a href="https://docs.2i2c.org/en/latest/about/index.html">About the Service</a>
-        </li>
-        <li>
-          <a href="https://docs.2i2c.org/en/latest/admin/index.html">Administer a Hub</a>
-        </li>
-        <li>
-          <a href="https://pilot-hubs.2i2c.org/">2i2c DevOps Guide</a>
-        </li>
-        <li>
-          <a href="https://team-compass.2i2c.org/">2i2c Team Compass</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="right d-none d-xl-flex">
-      <ul class="social-templates d-flex justify-content-end">
-        <li>
-          <a href="https://twitter.com/2i2c_org">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/2i2c-org/">
-            <i class="fab fa-github"></i>
-            </a>
-        </li>
-      </ul>
+        <ul class="d-flex">
+            <li class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hub Service
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="https://docs.2i2c.org/en/latest/about/index.html">About the Service</a>
+                    <a class="dropdown-item" href="https://docs.2i2c.org/en/latest/admin/index.html">Administer a Hub</a>
+                </div>
+            </li>
+            </ul>
+            <li class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Community
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="https://team-compass.2i2c.org/">2i2c Team Compass<i class="fas fa-compass"></i></a>
+                <a class="dropdown-item" href="https://2i2c.org/#contact">Mailing List<i class="fas fa-envelope"></i></a>
+                <a class="dropdown-item" href="https://twitter.com/2i2c_org">Twitter<i class="fab fa-twitter"></i></a>
+                <a class="dropdown-item" href="https://github.com/2i2c-org/">GitHub<i class="fab fa-github"></i></a>
+                </div>
+            </li>
+            <li>
+                <a href="https://2i2c.org/"><button class="btn" type="button">2i2c.org</button></a>
+            </li>
+        </ul>
     </div>
 </nav>
-
 {{ super() }}
 {%- endblock %}
