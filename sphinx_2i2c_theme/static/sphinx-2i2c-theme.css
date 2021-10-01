@@ -68,10 +68,9 @@ p.nav-title-text {
   padding-left: .2em;
 }
 
-.nav-2i2c button:hover {
+.nav-2i2c button:hover, .nav-2i2c a:hover {
   color: rgb(var(--pst-color-secondary));
   text-decoration: none;
-
 }
 
 nav.nav-2i2c li {
