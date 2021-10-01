@@ -34,6 +34,11 @@ nav.nav-2i2c ul {
   padding-left: 1em;
 }
 
+div.middle > *:first-child {
+    /* First link doesn't need left padding */
+    padding-left: 0 !important;
+}
+
 .nav-2i2c .nav-logo {
   padding: 0;
   /* Max width of the left navbar in the book theme */
@@ -66,7 +71,7 @@ p.nav-title-text {
 .nav-2i2c button:hover {
   color: rgb(var(--pst-color-secondary));
   text-decoration: none;
-  
+
 }
 
 nav.nav-2i2c li {
