@@ -2,6 +2,7 @@ project = "Sphinx 2i2c Theme"
 copyright = "2021"
 author = "2i2c"
 master_doc = "index"
+version = "0.0.1a"
 
 # -- General configuration ---------------------------------------------------
 
