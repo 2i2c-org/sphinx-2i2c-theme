@@ -23,7 +23,7 @@ setup(
     license="BSD",
     packages=find_packages(),
     install_requires=[
-        "sphinx-book-theme>=0.1.3",
+        "sphinx-book-theme>=0.1.7",
     ],
     entry_points={"sphinx.html_themes": ["sphinx_2i2c_theme = sphinx_2i2c_theme"]},
     include_package_data=True,
