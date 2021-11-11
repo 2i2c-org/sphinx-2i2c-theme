@@ -13,7 +13,7 @@ Other than this, the theme behaves the exact same as the [sphinx book theme](htt
 ## Theme build system
 
 This theme uses the [`sphinx-theme-builder` tool](https://github.com/pradyunsg/sphinx-theme-builder), which is a helper tool for automatically compiling Sphinx theme assets.
-This will download a local copy of NPM and build the theme's assets with the environment specified in `package.json`.
+This will download a local copy of NodeJS and build the theme's assets with the environment specified in `package.json`.
 
 ## Theme structure
 
