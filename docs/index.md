@@ -1,15 +1,7 @@
 # The 2i2c documentation theme
 
 A lightweight theme built on the Sphinx Book Theme, for use by 2i2c.
-
-```{toctree}
-:maxdepth: 3
-reference/kitchen-sink/index
-```
-
-## Theme structure
-
-This theme tries to make minimal changes to the `sphinx-book-theme` in order to standardize a top-bar that can be shared across all 2i2c documentation.
+It makes minimal changes to the `sphinx-book-theme` in order to standardize a top-bar that can be shared across all 2i2c documentation.
 
 It does these two primary things:
 
@@ -17,6 +9,15 @@ It does these two primary things:
 - Adds some CSS that standardizes the look and feel according to 2i2c colors
 
 Other than this, the theme behaves the exact same as the [sphinx book theme](https://sphinx-book-theme.readthedocs.io).
+
+## Theme build system
+
+This theme uses the [`sphinx-theme-builder` tool](https://github.com/pradyunsg/sphinx-theme-builder), which is a helper tool for automatically compiling Sphinx theme assets.
+This will download a local copy of NPM and build the theme's assets with the environment specified in `package.json`.
+
+## Theme structure
+
+This theme follows the [`sphinx-theme-builder` filesystem layout](https://sphinx-theme-builder.readthedocs.io/en/latest/reference/filesystem-layout/).
 
 ## Use this theme in a repository
 
@@ -41,6 +42,7 @@ To use this theme in the repository, follow these steps:
   ```
   
 - Make any customizations that you wish, following the [sphinx book theme documenation](https://sphinx-book-theme.readthedocs.io).
+
 ## Build the theme locally
 
 You can build the documentation for this theme to preview it.
@@ -66,4 +68,13 @@ To build live documentation that updates when you update local files, run the fo
 
 ```console
 $ nox -s docs-live
+```
+
+## Examples
+
+See the kitchen sink for some example pages.
+
+```{toctree}
+:maxdepth: 3
+reference/kitchen-sink/index
 ```

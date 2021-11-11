@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Sphinx compiled assets
+src/sphinx_2i2c_theme/theme/sphinx-2i2c-theme/static/styles
+node_modules
+.nodeenv
