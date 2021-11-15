@@ -12,7 +12,7 @@ dynamic = ["version"]
 readme = "README.md"
 urls = { Organization = "https://2i2c.org" }
 
-requires-python = ">=3.6"
+requires-python = ">=3.8"
 dependencies = [
   "sphinx-book-theme>=0.1.7",
 ]
