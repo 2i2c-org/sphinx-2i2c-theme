@@ -8,7 +8,7 @@
   --pst-color-navbar-link-active: var(--pst-color-primary);
   --pst-color-sidebar-link-active: var(--pst-color-primary);
   --pst-color-link: var(--pst-color-primary);
-  --navbar-height: 4em;
+  --navbar-height: 3em;
   --logo-bold: 700
 }
 
@@ -56,11 +56,12 @@ nav.nav-2i2c {
     }
 
     > a {
-      font-size: 2em;
+      font-size: 1.6em;
       font-family: "Fira Sans";
       font-weight: var(--logo-bold);
       margin-top: .3em;
       text-align: center;
+      text-decoration: none;
   
       span.nav-subtitle-text {
         font-weight: 400;
@@ -77,8 +78,8 @@ nav.nav-2i2c {
 
   #topbar-right {
     #support-button-2i2c {
-      font-size: 1.2em;
-      padding: .2em 0 .4em 0;
+      font-size: 1.1em;
+      padding: .15em 0 .3em 0;
       border: 1px rgb(var(--pst-color-primary)) solid;
       border-radius: 0.5em;
       transition: background-color .2s;
