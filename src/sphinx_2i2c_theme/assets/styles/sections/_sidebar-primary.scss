@@ -1,0 +1,14 @@
+#site-navigation {
+  // Styling for our logo
+  h1#site-title {
+    font-family: "Fira Sans";
+    font-size: 1.1em !important;
+    color: rgb(var(--pst-color-primary));
+    font-weight: 500;
+  }
+  
+  // So that the title in the sidebar is just below "2i2c"
+  .navbar-brand-box, .navbar-brand-box .navbar-brand {
+    padding-top: 0;
+  }
+}
