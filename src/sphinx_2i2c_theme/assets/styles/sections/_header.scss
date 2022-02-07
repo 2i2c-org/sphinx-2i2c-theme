@@ -22,10 +22,11 @@ nav.nav-2i2c {
   .nav-logo {
     padding: 0;
     /* Max width of the left navbar in the book theme */
-    max-width: 275px; 
+    max-width: 275px;
   }
 
-  button:hover, .nav-2i2c a:hover {
+  button:hover,
+  .nav-2i2c a:hover {
     color: rgb(var(--pst-color-primary));
     text-decoration: none;
   }
@@ -40,18 +41,18 @@ nav.nav-2i2c {
       font-size: 1.6em;
       font-family: "Fira Sans";
       font-weight: var(--logo-bold);
-      margin-top: .3em;
+      margin-top: 0.3em;
       text-align: center;
       text-decoration: none;
-  
+
       span.nav-subtitle-text {
         font-weight: 400;
         color: rgb(var(--pst-color-primary));
-        padding-left: .2em;
+        padding-left: 0.2em;
       }
     }
   }
-  
+
   #topbar-middle > *:first-child {
     /* First link doesn't need left padding */
     padding-left: 0 !important;
@@ -60,10 +61,10 @@ nav.nav-2i2c {
   #topbar-right {
     #support-button-2i2c {
       font-size: 1.1em;
-      padding: .15em 0 .3em 0;
+      padding: 0.15em 0 0.3em 0;
       border: 1px rgb(var(--pst-color-primary)) solid;
       border-radius: 0.5em;
-      transition: background-color .2s;
+      transition: background-color 0.2s;
       text-decoration: none;
       &:hover {
         background-color: rgb(247, 247, 247);
@@ -76,9 +77,9 @@ nav.nav-2i2c {
 div.dropdown-menu {
   &.show {
     display: block;
-    z-index: 9999;  // To make sure it shows up over the book theme
+    z-index: 9999; // To make sure it shows up over the book theme
   }
   i {
-    padding-left: .5em;
+    padding-left: 0.5em;
   }
 }
