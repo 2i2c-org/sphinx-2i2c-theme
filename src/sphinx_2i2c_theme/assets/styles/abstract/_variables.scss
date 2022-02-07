@@ -9,3 +9,10 @@
   --navbar-height: 3em;
   --logo-bold: 700;
 }
+
+// Copied from sphinx-book-theme
+// Breakpoints from Bootstrap: https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;

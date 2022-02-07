@@ -19,12 +19,6 @@ nav.nav-2i2c {
     list-style: none;
   }
 
-  .nav-logo {
-    padding: 0;
-    /* Max width of the left navbar in the book theme */
-    max-width: 275px;
-  }
-
   button:hover,
   .nav-2i2c a:hover {
     color: rgb(var(--pst-color-primary));
@@ -32,9 +26,16 @@ nav.nav-2i2c {
   }
 
   #topbar-left {
+    padding: 0;
+    /* Max width of the left navbar in the book theme */
+    max-width: 275px;
+
     p.nav-title-text {
       margin: 0;
-      width: 275px;
+      // On wide screens, fix the size so it aligns with the title below
+      @media (min-width: $breakpoint-md) {
+        width: 275px;
+      }
     }
 
     > a {
@@ -42,7 +43,13 @@ nav.nav-2i2c {
       font-family: "Fira Sans";
       font-weight: var(--logo-bold);
       margin-top: 0.3em;
-      text-align: center;
+      padding-left: 1em;
+
+      @media (min-width: $breakpoint-md) {
+        text-align: center;
+        padding-left: 0;
+      }
+
       text-decoration: none;
 
       span.nav-subtitle-text {
