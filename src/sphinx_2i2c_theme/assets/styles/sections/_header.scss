@@ -1,0 +1,92 @@
+// Navigation bar on top
+nav.nav-2i2c {
+  background-color: white;
+  height: var(--navbar-height);
+  align-items: center;
+  padding: 0;
+
+  a {
+    color: rgb(var(--pst-color-primary));
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1em;
+  }
+
+  li {
+    padding: 0 1em;
+    list-style: none;
+  }
+
+  button:hover,
+  .nav-2i2c a:hover {
+    color: rgb(var(--pst-color-primary));
+    text-decoration: none;
+  }
+
+  #topbar-left {
+    padding: 0;
+    /* Max width of the left navbar in the book theme */
+    max-width: 275px;
+
+    p.nav-title-text {
+      margin: 0;
+      // On wide screens, fix the size so it aligns with the title below
+      @media (min-width: $breakpoint-md) {
+        width: 275px;
+      }
+    }
+
+    > a {
+      font-size: 1.6em;
+      font-family: "Fira Sans";
+      font-weight: var(--logo-bold);
+      margin-top: 0.3em;
+      padding-left: 1em;
+
+      @media (min-width: $breakpoint-md) {
+        text-align: center;
+        padding-left: 0;
+      }
+
+      text-decoration: none;
+
+      span.nav-subtitle-text {
+        font-weight: 400;
+        color: rgb(var(--pst-color-primary));
+        padding-left: 0.2em;
+      }
+    }
+  }
+
+  #topbar-middle > *:first-child {
+    /* First link doesn't need left padding */
+    padding-left: 0 !important;
+  }
+
+  #topbar-right {
+    #support-button-2i2c {
+      font-size: 1.1em;
+      padding: 0.15em 0 0.3em 0;
+      border: 1px rgb(var(--pst-color-primary)) solid;
+      border-radius: 0.5em;
+      transition: background-color 0.2s;
+      text-decoration: none;
+      &:hover {
+        background-color: rgb(247, 247, 247);
+      }
+    }
+  }
+}
+
+// Padding for icons in the dropdown
+div.dropdown-menu {
+  &.show {
+    display: block;
+    z-index: 9999; // To make sure it shows up over the book theme
+  }
+  i {
+    padding-left: 0.5em;
+  }
+}
