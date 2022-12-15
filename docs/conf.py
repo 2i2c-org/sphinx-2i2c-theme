@@ -31,6 +31,8 @@ html_title = "Sphinx 2i2c Theme"
 html_copy_source = True
 html_sourcelink_suffix = ""
 
+ogp_site_url = "https://sphinx-2i2c-theme.readthedocs.io/en/latest/"
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".

@@ -8,11 +8,8 @@ build_command = ["-b", "html", "docs", "docs/_build/html"]
 def docs(session):
     session.install("-e", ".[dev]")
     session.install("-r", "docs/requirements.txt")
-    session.run("stb", "compile")
-    session.run("sphinx-build", *build_command)
-
-@nox.session(name="docs-live")
-def docs_live(session):
-    session.install("-e", ".[dev]")
-    session.install("-r", "docs/requirements.txt")
-    session.run("stb", "serve", "docs")
+    if "live" in session.posargs:
+        session.run("stb", "serve", "docs")
+    else:
+        session.run("stb", "compile")
+        session.run("sphinx-build", *build_command)
