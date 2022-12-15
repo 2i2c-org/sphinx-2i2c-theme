@@ -32,7 +32,10 @@ html_copy_source = True
 html_sourcelink_suffix = ""
 
 # Opengraph configuration
-# ogp_site_url = "https://sphinx-2i2c-theme.readthedocs.io/en/latest/"
+ogp_site_url = "https://sphinx-2i2c-theme.readthedocs.io/en/latest/"
+ogp_social_previews = {
+    "site_url": "2i2c.org",
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
