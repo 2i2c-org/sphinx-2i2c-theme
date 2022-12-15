@@ -17,9 +17,12 @@ def update_config(app):
     if not social_previews:
         social_previews = {}
 
-    # Set a default logo for social previews
-    if not app.config.html_logo:
-        
+    # If no URL is set, don't generate social previews
+    if not app.config.ogp_site_url:
+        social_previews["site_url"] = "2i2c.org"
+
+    # If no html_logo is set then use a stock 2i2c logo
+    if not app.config.html_logo and not social_previews.get("image"):
         path_static = Path(__file__).parent / "theme/sphinx-2i2c-theme/static"
         path_img = path_static / "images/logo.png"
         social_previews["image"] = str(path_img)
