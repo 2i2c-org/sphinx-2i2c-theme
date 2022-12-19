@@ -15,6 +15,9 @@ urls = { Organization = "https://2i2c.org" }
 requires-python = ">=3.8"
 dependencies = [
   "sphinx-book-theme>=0.3.2,<0.4",
+  "sphinx-social-previews@git+https://github.com/choldgraf/sphinx-social-previews",
+  "sphinx-copybutton",
+  "sphinx-togglebutton",
 ]
 
 license = { file = "LICENSE"}
