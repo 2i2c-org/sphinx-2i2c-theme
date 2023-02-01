@@ -1,9 +1,9 @@
-#site-navigation {
+.bd-sidebar-primary {
   // Styling for our logo
   h1#site-title {
     font-family: "Fira Sans";
     font-size: 1.1em !important;
-    color: rgb(var(--pst-color-primary));
+    color: var(--pst-color-primary);
     font-weight: 500;
     margin-left: auto;
     margin-right: auto;
@@ -14,4 +14,10 @@
   .navbar-brand-box .navbar-brand {
     padding-top: 0;
   }
+}
+
+// Both sidebars (if the secondary sidebar gets many more rules, create its own SCSS file)
+.bd-sidebar-primary, .bd-sidebar-secondary {
+  // Stick to the top
+  top: 0;
 }

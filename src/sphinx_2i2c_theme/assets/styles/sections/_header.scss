@@ -1,13 +1,21 @@
-// Navigation bar on top
+/**
+ * Navigation bar across all 2i2c websites at the top.
+ */
+// Turn the header back on because it is disabled in the book theme
+.bd-header {
+  display: flex;
+  // To prevent our header from sticking on the page
+  position: unset;
+}
+
+// 2i2c-specific div we put in the header
 nav.nav-2i2c {
-  background-color: white;
-  height: var(--navbar-height);
+  height: var(--pst-header-height);
   align-items: center;
   padding: 0;
-  border-bottom: 1px solid $grey--light;
 
   a {
-    color: rgb(var(--pst-color-primary));
+    color: var(--pst-color-primary);
   }
 
   ul {
@@ -22,7 +30,7 @@ nav.nav-2i2c {
 
   button:hover,
   .nav-2i2c a:hover {
-    color: rgb(var(--pst-color-primary));
+    color: var(--pst-color-primary);
     text-decoration: none;
   }
 
@@ -55,7 +63,7 @@ nav.nav-2i2c {
 
       span.nav-subtitle-text {
         font-weight: 400;
-        color: rgb(var(--pst-color-primary));
+        color: var(--pst-color-primary);
         padding-left: 0.2em;
       }
     }
@@ -70,12 +78,12 @@ nav.nav-2i2c {
     #support-button-2i2c {
       font-size: 1.1em;
       padding: 0.15em 0 0.3em 0;
-      border: 1px rgb(var(--pst-color-primary)) solid;
+      border: 1px var(--pst-color-primary) solid;
       border-radius: 0.5em;
       transition: background-color 0.2s;
       text-decoration: none;
       &:hover {
-        background-color: rgb(247, 247, 247);
+        background-color: var(--pst-color-on-surface);
       }
     }
   }
