@@ -9,6 +9,15 @@ __version__ = "0.0.1"
 THEME_PATH = (Path(__file__).parent / "theme" / "sphinx-2i2c-theme").resolve()
 
 
+def add_fira_css(app, exception=None):
+    """
+    Add the CSS for Fira, which we use in the logo
+    """
+    path_css_out = str(Path(app.builder.outdir) / "_static" / "fira.css")
+    urlretrieve("https://code.cdn.mozilla.net/fonts/fira.css", path_css_out)
+    app.add_css_file("fira.css")
+
+
 def hash_html_assets(app, pagename, templatename, context, doctree):
     assets = ["styles/sphinx-2i2c-theme.css"]
     hash_assets_for_files(assets, THEME_PATH / "static", context)
@@ -36,14 +45,10 @@ def update_config(app):
 def setup(app):
     app.connect("builder-inited", update_config)
     app.connect("html-page-context", hash_html_assets)
-    
+    app.connect("build-finished", add_fira_css)
     app.add_html_theme("sphinx_2i2c_theme", THEME_PATH)
     app.config.html_favicon = "https://2i2c.org/media/icon.png"
 
-    # Add the CSS for Fira, which we use in the logo
-    path_css_out = str(Path(app.builder.outdir) / "_static" / "fira.css")
-    urlretrieve("https://code.cdn.mozilla.net/fonts/fira.css", path_css_out)
-    app.add_css_file("fira.css")
 
     # Activate a few extensions by default
     add_extensions = ["sphinx_copybutton", "sphinx_togglebutton", "sphinxext.opengraph"]
