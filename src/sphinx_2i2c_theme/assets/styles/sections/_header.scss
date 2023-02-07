@@ -1,8 +1,13 @@
 /**
  * Navigation bar across all 2i2c websites at the top.
  */
-// Turn the header back on because it is disabled in the book theme
+// These override the PST and SBT defaults
 .bd-header {
+  // TODO: In the book theme, we should not manually remove the header, but
+  //    instead we should make it disappear if it is empty. Then we can just
+  //    add items to it in this theme and it should just reappear.
+
+  // Turn the header back on because it is disabled in the book theme
   display: flex;
   // To prevent our header from sticking on the page
   position: unset;
@@ -37,7 +42,7 @@ nav.nav-2i2c {
   #topbar-left {
     padding: 0;
     /* Max width of the left navbar in the book theme */
-    max-width: 275px;
+    max-width: 20%;
 
     p.nav-title-text {
       margin: 0;

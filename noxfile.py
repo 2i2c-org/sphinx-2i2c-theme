@@ -1,3 +1,14 @@
+"""
+Build and preview this theme documentation locally.
+
+To build with a live-server:
+
+    nox -s docs -- live
+
+To re-install dependencies:
+
+    nox -s docs -- -r
+"""
 import nox
 
 nox.options.reuse_existing_virtualenvs = True
