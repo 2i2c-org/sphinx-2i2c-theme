@@ -15,6 +15,7 @@ nox.options.reuse_existing_virtualenvs = True
 
 build_command = ["-b", "html", "docs", "docs/_build/html"]
 
+
 @nox.session
 def docs(session):
     session.install("-r", "docs/requirements.txt")
