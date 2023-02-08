@@ -32,8 +32,10 @@ html_copy_source = True
 html_sourcelink_suffix = ""
 
 # Opengraph configuration
+# ref: https://sphinxext-opengraph.readthedocs.io/en/latest/index.html
+#
 ogp_site_url = "https://sphinx-2i2c-theme.readthedocs.io/en/latest/"
-ogp_social_previews = {
+ogp_social_cards = {
     "site_url": "2i2c.org",
 }
 
