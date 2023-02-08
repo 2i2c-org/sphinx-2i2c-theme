@@ -12,22 +12,25 @@ def hash_html_assets(app, pagename, templatename, context, doctree):
     hash_assets_for_files(assets, THEME_PATH / "static", context)
 
 def update_config(app):
-    # Social previews config
-    social_previews = app.config.ogp_social_previews
-    if not social_previews:
-        social_previews = {}
+    config = app.config.__dict__
+
+    # Declare default config for opengraph's social cards
+    #
+    # ref: https://sphinxext-opengraph.readthedocs.io/en/latest/socialcards.html
+    #
+    ogp_social_cards = config.get("ogp_social_cards", {})
 
     # If no URL is set, don't generate social previews
-    if not app.config.ogp_site_url:
-        social_previews["site_url"] = "2i2c.org"
+    if not config.get("ogp_site_url"):
+        ogp_social_cards["site_url"] = "2i2c.org"
 
     # If no html_logo is set then use a stock 2i2c logo
-    if not app.config.html_logo and not social_previews.get("image"):
+    if not config.get("html_logo") and not ogp_social_cards.get("image"):
         path_static = Path(__file__).parent / "theme/sphinx-2i2c-theme/static"
         path_img = path_static / "images/logo.png"
-        social_previews["image"] = str(path_img)
+        ogp_social_cards["image"] = str(path_img)
 
-    app.config.__dict__["ogp_social_previews"] = social_previews
+    config["ogp_social_cards"] = ogp_social_cards
 
 def setup(app):
     app.add_html_theme("sphinx_2i2c_theme", THEME_PATH)
@@ -37,6 +40,6 @@ def setup(app):
     app.connect("html-page-context", hash_html_assets)
 
     # Activate a few extensions by default
-    add_extensions = ["sphinx_copybutton", "sphinx_togglebutton", "sphinxext.opengraph", "sphinx_social_previews"]
+    add_extensions = ["sphinx_copybutton", "sphinx_togglebutton", "sphinxext.opengraph"]
     for extension in add_extensions:
         app.setup_extension(extension)
