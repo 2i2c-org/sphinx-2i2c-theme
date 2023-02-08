@@ -1,3 +1,12 @@
+# Manually added parts to .gitignore
+# ----------------------------------
+#
+package-lock.json
+
+
+# Python .gitignore from https://github.com/github/gitignore/blob/HEAD/Python.gitignore
+# -------------------------------------------------------------------------------------
+#
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
