@@ -18,6 +18,7 @@ dependencies = [
   "sphinxext-opengraph",
   "sphinx-copybutton",
   "sphinx-togglebutton",
+  "sphinxext-opengraph>=0.8.0",
 ]
 
 license = { file = "LICENSE"}
