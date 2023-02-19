@@ -14,7 +14,7 @@ urls = { Organization = "https://2i2c.org" }
 
 requires-python = ">=3.8"
 dependencies = [
-  "sphinx-book-theme@git+https://github.com/executablebooks/sphinx-book-theme",
+  "sphinx-book-theme>=1.0.0rc1",
   "sphinxext-opengraph",
   "sphinx-copybutton",
   "sphinx-togglebutton",

@@ -1,96 +1,14 @@
 /**
  * Navigation bar across all 2i2c websites at the top.
  */
-// These override the PST and SBT defaults
-.bd-header {
-  // TODO: In the book theme, we should not manually remove the header, but
-  //    instead we should make it disappear if it is empty. Then we can just
-  //    add items to it in this theme and it should just reappear.
-
-  // Turn the header back on because it is disabled in the book theme
-  display: flex;
-  // To prevent our header from sticking on the page
-  position: unset;
-}
 
 // 2i2c-specific div we put in the header
-nav.nav-2i2c {
-  height: var(--pst-header-height);
-  align-items: center;
-  padding: 0;
 
-  a {
-    color: var(--pst-color-primary);
-  }
-
-  ul {
-    margin: 0;
-    padding-left: 1em;
-  }
-
-  li {
-    padding: 0 1em;
-    list-style: none;
-  }
-
+.nav-logo {
   button:hover,
   .nav-2i2c a:hover {
     color: var(--pst-color-primary);
     text-decoration: none;
-  }
-
-  #topbar-left {
-    padding: 0;
-    /* Max width of the left navbar in the book theme */
-    max-width: 20%;
-
-    p.nav-title-text {
-      margin: 0;
-      // On wide screens, fix the size so it aligns with the title below
-      @media (min-width: $breakpoint-md) {
-        width: 275px;
-      }
-    }
-
-    > a {
-      font-size: 1.6em;
-      font-family: "Fira Sans";
-      font-weight: var(--logo-bold);
-      margin-top: 0.3em;
-      padding-left: 1em;
-
-      @media (min-width: $breakpoint-md) {
-        text-align: center;
-        padding-left: 0;
-      }
-
-      text-decoration: none;
-
-      span.nav-subtitle-text {
-        font-weight: 400;
-        color: var(--pst-color-primary);
-        padding-left: 0.2em;
-      }
-    }
-  }
-
-  #topbar-middle > *:first-child {
-    /* First link doesn't need left padding */
-    padding-left: 0 !important;
-  }
-
-  #topbar-right {
-    #support-button-2i2c {
-      font-size: 1.1em;
-      padding: 0.15em 0 0.3em 0;
-      border: 1px var(--pst-color-primary) solid;
-      border-radius: 0.5em;
-      transition: background-color 0.2s;
-      text-decoration: none;
-      &:hover {
-        background-color: var(--pst-color-on-surface);
-      }
-    }
   }
 }
 

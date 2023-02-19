@@ -4,5 +4,7 @@
 
 // Load theme-specific SCSS
 @import "abstract/variables";
+@import "components/logo";
+@import "components/support-button";
 @import "sections/header";
 @import "sections/sidebar-primary";

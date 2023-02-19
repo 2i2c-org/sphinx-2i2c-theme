@@ -11,7 +11,6 @@ version = "0.0.1a"
 # ones.
 extensions = [
     "myst_parser",
-    "sphinx_2i2c_theme",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
