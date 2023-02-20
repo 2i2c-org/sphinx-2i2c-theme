@@ -23,8 +23,10 @@
   }
 
   // Add back the border to the top since we have header items
-  .sidebar-primary-items__start {
-    border-top: 1px solid var(--pst-color-border);
+  @media (max-width: $breakpoint-md) {
+    .sidebar-primary-items__start {
+      border-top: 1px solid var(--pst-color-border);
+    }
   }
 }
 
