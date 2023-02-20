@@ -19,4 +19,9 @@
       color: var(--pst-color-primary);
     }
   }
+
+  // The logo title should align to the left to be flush with logo
+  p.logo__title {
+    align-self: start;
+  }
 }
