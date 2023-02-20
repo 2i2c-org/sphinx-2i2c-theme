@@ -45,9 +45,9 @@ def update_config(app):
             "icon": "fa-brands fa-twitter",
         },
         {
-            "name": "GitHub",
-            "url": "https://github.com/2i2c-org",
-            "icon": "fa-brands fa-github",
+            "name": "Mastodon",
+            "url": "https://hachyderm.io/@2i2c_org",
+            "icon": "fa-brands fa-mastodon",
         },
         {
             "name": "Contact",
