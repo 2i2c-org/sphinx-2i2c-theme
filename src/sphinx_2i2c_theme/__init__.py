@@ -19,6 +19,9 @@ def _config_provided_by_user(app, key):
 
 
 def update_config(app):
+    # These are the theme options that will be used in the build
+    theme_options = app.builder.theme_options
+
     # If no URL is set, don't generate social previews
     if not _config_provided_by_user(app, "ogp_site_url"):
         app.config.ogp_site_url = "2i2c.org"
@@ -34,10 +37,62 @@ def update_config(app):
 
     app.config.ogp_social_cards = social_cards
 
+    # Add icon links to config
+    icon_links = [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/2i2c-org",
+            "icon": "fa-brands fa-twitter",
+        },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/2i2c-org",
+            "icon": "fa-brands fa-github",
+        },
+        {
+            "name": "Contact",
+            "url": "https://2i2c.org/#contact",
+            "icon": "fas fa-envelope",
+        },
+        {
+            "name": "Blog",
+            "url": "https://2i2c.org/blog",
+            "icon": "fas fa-newspaper",
+        },
+    ]
+    if "icon-links" not in theme_options:
+        theme_options["icon_links"] = icon_links
+
 
 def hash_html_assets(app, pagename, templatename, context, doctree):
     assets = ["styles/sphinx-2i2c-theme.css"]
     hash_assets_for_files(assets, THEME_PATH / "static", context)
+
+
+def activate_extensions(app, extensions):
+    """Activate extensions bundled with this theme.
+    
+    This also manually triggers the `config-inited` build step to account for
+    added extensions that hook into this event.
+    """
+
+    # Remove all of the `config-inited` event listeners because they've already triggered
+    # We'll then re-trigger this event after adding extensions so that *only* their event hooks trigger
+    old_listeners = app.events.listeners["config-inited"]
+    app.events.listeners["config-inited"] = []
+
+    # Activate a few extensions by default
+    for extension in extensions:
+        # If it's already been activated just skip it
+        if extension in app.config.extensions:
+            continue
+        app.setup_extension(extension)
+
+    # Emit the config-inited event so that the new extensions run their hooks
+    app.emit("config-inited", app.config)
+
+    # Finally join back the lists
+    app.events.listeners["config-inited"][:0] = old_listeners
 
 
 def setup(app):
@@ -54,19 +109,8 @@ def setup(app):
     # Link to the Mozilla CDN because downloading locally doesn't seem to work
     app.add_css_file("https://fonts.cdnfonts.com/css/fira-sans-book")
 
-    # Remove all of the `config-inited` event listeners because they've already triggered
-    # We'll then re-trigger this event after adding extensions so that *only* their event hooks trigger
-    app.events.listeners["config-inited"] = []
-
-    # Activate a few extensions by default
     add_extensions = ["sphinx_copybutton", "sphinx_togglebutton", "sphinxext.opengraph", "sphinx.ext.intersphinx"]
-    for extension in add_extensions:
-        app.setup_extension(extension)
-
-    # Emit the two events that have already happened
-    # This ensures that any newly-loaded extensions that were listening for these
-    # events are triggered.
-    app.emit("config-inited", app.config)
+    activate_extensions(app, add_extensions)
 
     # Video directive
     app.add_directive("video", Video)

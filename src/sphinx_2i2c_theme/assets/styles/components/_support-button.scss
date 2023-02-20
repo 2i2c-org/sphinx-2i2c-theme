@@ -4,6 +4,8 @@
     font-weight: bold;
     border: 1px var(--pst-color-primary) solid;
     color: var(--pst-color-primary);
+    padding-top: .25rem;
+    padding-bottom: .25rem;
     
     transition: background-color 0.2s;
     &:hover {

@@ -1,15 +1,21 @@
 .bd-sidebar-primary {
-  padding-top: 1rem;
+  padding-top: 0rem;
 
   // Styling for our logo
   p.logo__title {
     font-family: "Fira Sans";
-    font-size: 1.1em !important;
+    font-size: 1.5em;
     color: var(--pst-color-primary);
     font-weight: 500;
     white-space: normal;
     text-align: center;
     line-height: 1.75rem;
+  }
+
+  // Mobile behavior for the header links
+  .sidebar-header-items .nav-item button.btn {
+    // So they're flush with the title
+    padding: .1rem 0;
   }
 }
 

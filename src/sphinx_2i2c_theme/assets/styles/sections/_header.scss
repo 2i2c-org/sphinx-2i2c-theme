@@ -1,24 +1,37 @@
 /**
  * Navigation bar across all 2i2c websites at the top.
  */
+.navbar-nav {
+  column-gap: .5rem;
+  .dropdown-menu .dropdown-item {
+    padding-left: 0;
 
-// 2i2c-specific div we put in the header
+    i {
+      padding-left: .5rem;
+    }
+  }
 
-.nav-logo {
-  button:hover,
-  .nav-2i2c a:hover {
-    color: var(--pst-color-primary);
-    text-decoration: none;
+  a button {
+    color: var(--pst-color-text-muted);
+  }
+
+  .nav-link {
+    button {
+      padding-left: .25rem;
+      padding-right: .25rem;
+    }
+
+    &.nav-external:after {
+      margin-left: 0;
+    }
   }
 }
 
-// Padding for icons in the dropdown
-div.dropdown-menu {
-  &.show {
-    display: block;
-    z-index: 9999; // To make sure it shows up over the book theme
-  }
+// Standardize icon link size
+.navbar-icon-links {
+  gap: .75rem;
+
   i {
-    padding-left: 0.5em;
+    font-size: 1.25rem !important;
   }
 }

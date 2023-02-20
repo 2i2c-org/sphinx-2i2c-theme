@@ -1,40 +1,18 @@
-{% set header_config = {
-  "Hub Service": [
-    ("https://docs.2i2c.org/en/latest/about/overview.html", "About the Service"),
-    ("https://docs.2i2c.org/en/latest/about/overview.html", "Administer a Hub"),
-    ("https://infrastructure.2i2c.org/en/latest/", "Infrastructure Guide")
-  ],
-  "Community": [
-    ("https://team-compass.2i2c.org/", '2i2c Team Compass <i class="fas fa-compass"></i>'),
-    ("https://2i2c.org/#contact", 'Mailing List<i class="fas fa-envelope"></i>'),
-    ("https://twitter.com/2i2c_org", 'Twitter<i class="fab fa-twitter"></i>'),
-    ("https://github.com/2i2c-org/", 'GitHub<i class="fab fa-github"></i>')
-  ],
-}
+{% set header_config = [
+  ("https://docs.2i2c.org/en/latest/about/overview.html", "Service Docs"),
+  ("https://infrastructure.2i2c.org/en/latest/", "Infrastructure Guide"),
+  ("https://team-compass.2i2c.org/", "Team Compass"),
+  ("https://2i2c.org/", "2i2c.org"),
+]
 %}
 <ul class="header-dropdown-links navbar-nav d-flex">
-  {% for title, entries in header_config.items() %}
-  <div class="nav-item dropdown">
-    <button class="nav-item btn dropdown-toggle" type="button" id="dropdownMenuButton{{ loop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      {{ title }}
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ loop.index }}">
-      {% for url, text in entries %}
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ url }}">
-          {{ text }}
-        </a>
-      </li>
-      {% endfor %}
-    </div>
-  </div>
-  {% endfor %}
-  {# Add an extra standalone button at the end #}
+  {% for url, text in header_config %}
   <li class="nav-item">
-      <a href="https://2i2c.org/">
-        <button class="btn" type="button">
-          2i2c.org
-        </button>
-      </a>
+    <a class="nav-link{% if text == '2i2c.org' %} nav-external{% endif %}" href="{{ url }}">
+      <button class="btn">
+        {{ text }}
+      </button>
+    </a>
   </li>
+  {% endfor %}
 </ul>
