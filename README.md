@@ -1,5 +1,5 @@
 # sphinx-2i2c-theme
 
-## Build this theme locally
+A modified version of the [Sphinx Book Theme](https://sphinx-book-theme.readthedocs.io).
 
-See [docs/index.md](docs/index.md).
+See [`docs/index.md`](docs/index.md) for this project's documentation.

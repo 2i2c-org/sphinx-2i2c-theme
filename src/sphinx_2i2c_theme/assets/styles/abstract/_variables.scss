@@ -1,12 +1,11 @@
 /* Overriding Book Theme colors to standardize for 2i2c */
 :root {
   --pst-font-size-base: none;
-  --pst-color-primary: 87, 154, 202;
-  --pst-color-secondary: 208, 102, 129;
+  --pst-color-primary: rgb(87, 154, 202);
+  --pst-color-secondary: rgb(208, 102, 129);
   --pst-color-navbar-link-active: var(--pst-color-primary);
   --pst-color-sidebar-link-active: var(--pst-color-primary);
   --pst-color-link: var(--pst-color-primary);
-  --navbar-height: 3em;
   --logo-bold: 700;
 }
 

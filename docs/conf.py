@@ -50,6 +50,5 @@ html_theme_options = {
     "repository_url": "https://github.com/2i2c-org/sphinx-2i2c-theme",
     "use_edit_page_button": True,
     "use_issues_button": True,
-    "use_repository_button": True,
     "use_download_button": True,
 }

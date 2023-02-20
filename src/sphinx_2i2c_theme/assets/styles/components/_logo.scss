@@ -1,0 +1,22 @@
+/*
+ * Header logo
+ */
+.nav-logo {
+  p.nav-title-text {
+    margin-bottom: 0;
+  }
+
+  // Style the `docs` with fira and same style
+  > a {
+    font-size: 2em;
+    font-family: "Fira Sans";
+    font-weight: var(--logo-bold);
+    padding: 0;
+    text-decoration: none;
+
+    span.nav-subtitle-text {
+      font-weight: 400;
+      color: var(--pst-color-primary);
+    }
+  }
+}

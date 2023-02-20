@@ -1,93 +1,37 @@
-// Navigation bar on top
-nav.nav-2i2c {
-  background-color: white;
-  height: var(--navbar-height);
-  align-items: center;
-  padding: 0;
-  border-bottom: 1px solid $grey--light;
+/**
+ * Navigation bar across all 2i2c websites at the top.
+ */
+.navbar-nav {
+  column-gap: .5rem;
+  .dropdown-menu .dropdown-item {
+    padding-left: 0;
 
-  a {
-    color: rgb(var(--pst-color-primary));
-  }
-
-  ul {
-    margin: 0;
-    padding-left: 1em;
-  }
-
-  li {
-    padding: 0 1em;
-    list-style: none;
-  }
-
-  button:hover,
-  .nav-2i2c a:hover {
-    color: rgb(var(--pst-color-primary));
-    text-decoration: none;
-  }
-
-  #topbar-left {
-    padding: 0;
-    /* Max width of the left navbar in the book theme */
-    max-width: 275px;
-
-    p.nav-title-text {
-      margin: 0;
-      // On wide screens, fix the size so it aligns with the title below
-      @media (min-width: $breakpoint-md) {
-        width: 275px;
-      }
-    }
-
-    > a {
-      font-size: 1.6em;
-      font-family: "Fira Sans";
-      font-weight: var(--logo-bold);
-      margin-top: 0.3em;
-      padding-left: 1em;
-
-      @media (min-width: $breakpoint-md) {
-        text-align: center;
-        padding-left: 0;
-      }
-
-      text-decoration: none;
-
-      span.nav-subtitle-text {
-        font-weight: 400;
-        color: rgb(var(--pst-color-primary));
-        padding-left: 0.2em;
-      }
+    i {
+      padding-left: .5rem;
     }
   }
 
-  #topbar-middle > *:first-child {
-    /* First link doesn't need left padding */
-    padding-left: 0 !important;
+  a button {
+    color: var(--pst-color-text-muted);
   }
 
-  #topbar-right {
-    #support-button-2i2c {
-      font-size: 1.1em;
-      padding: 0.15em 0 0.3em 0;
-      border: 1px rgb(var(--pst-color-primary)) solid;
-      border-radius: 0.5em;
-      transition: background-color 0.2s;
-      text-decoration: none;
-      &:hover {
-        background-color: rgb(247, 247, 247);
-      }
+  .nav-link {
+    button {
+      padding-left: .25rem;
+      padding-right: .25rem;
+    }
+
+    &.nav-external:after {
+      margin-left: 0;
     }
   }
 }
 
-// Padding for icons in the dropdown
-div.dropdown-menu {
-  &.show {
-    display: block;
-    z-index: 9999; // To make sure it shows up over the book theme
-  }
+// Standardize icon link size
+.navbar-icon-links {
+  gap: .75rem;
+
   i {
-    padding-left: 0.5em;
+    font-size: 1.25rem !important;
   }
 }
