@@ -41,6 +41,16 @@ We download the Mozilla Fira CSS and embed it in our side, since this is what ou
 
 We also define several custom CSS rules to handle a header with cross-organization links.
 
+## Redirect to `dirhtml`
+
+2i2c's documentation uses the `dirhtml` builder so that pages exist at `pagename/index.html` instead of `pagename.html`.
+However, the Sphinx default uses the `html` builder, and our documentation is often already built this way.
+This theme includes a helper event callback that does two things:
+
+- If `dirhtml` is the builder, create files to redirect `pagename.html` to `pagename/index.html`.
+  This ensures that old `html` builder links redirect.
+- If `html` is the builder, raise a warning that the `dirhtml` builder should be used instead.
+
 ## Extensions
 
 **`sphinxext.opengraph`** adds OpenGraph tags to each of our sites.
