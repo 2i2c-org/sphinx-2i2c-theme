@@ -3,7 +3,9 @@ import os
 from pathlib import Path
 from sphinx_book_theme import hash_assets_for_files
 from sphinx.util import logging
+from pydata_sphinx_theme.utils import get_theme_options_dict, config_provided_by_user
 from .video import Video
+from .html2dirhtml import redirect_from_html_to_dirhtml
 
 __version__ = "0.0.1"
 LOGGER = logging.getLogger(__name__)
@@ -11,26 +13,19 @@ LOGGER = logging.getLogger(__name__)
 THEME_PATH = (Path(__file__).parent / "theme" / "sphinx-2i2c-theme").resolve()
 
 
-def _config_provided_by_user(app, key):
-    """Check if the user has manually provided the config.
-    REMOVE when pydata v0.14 is released and import from there.
-    """
-    return any(key in ii for ii in [app.config.overrides, app.config._raw_config])
-
-
 def update_config(app):
     # These are the theme options that will be used in the build
-    theme_options = app.builder.theme_options
+    theme_options = get_theme_options_dict(app)
 
     # If no URL is set, don't generate social previews
-    if not _config_provided_by_user(app, "ogp_site_url"):
+    if not config_provided_by_user(app, "ogp_site_url"):
         app.config.ogp_site_url = "2i2c.org"
 
     # Social previews config
     social_cards = app.config.__dict__.get("ogp_social_cards", {})
 
     # If no html_logo is set then use a stock 2i2c logo
-    if not _config_provided_by_user(app, "html_logo") and not social_cards.get("image"):
+    if not config_provided_by_user(app, "html_logo") and not social_cards.get("image"):
         path_static = Path(__file__).parent / "theme/sphinx-2i2c-theme/static"
         path_img = path_static / "images/logo.png"
         social_cards["image"] = str(path_img)
@@ -100,6 +95,7 @@ def setup(app):
     app.config.html_favicon = "https://2i2c.org/media/icon.png"
     app.connect("builder-inited", update_config)
     app.connect("html-page-context", hash_html_assets)
+    app.connect("html-page-context", redirect_from_html_to_dirhtml)
 
     # Add our folder for templates
     here = Path(__file__).parent.resolve()
