@@ -49,6 +49,7 @@ However, the Sphinx default uses the `html` builder, and our documentation often
 [^1]: In practice, this creates a file at `pagename/index.html`.
       When a user visits `mysite.org/pagename`, the browser tells you it is a directory.
       By default, browsers will then look for an `index.html` file in that directory and display it.
+      This function creates _another_ file at `pagename.html` and makes it redirect to `pagename/`, and thus displays `pagename/index.html`.
 
 To avoid broken links, this theme includes a helper event callback that does two things:
 
