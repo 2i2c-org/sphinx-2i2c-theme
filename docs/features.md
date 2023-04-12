@@ -43,11 +43,16 @@ We also define several custom CSS rules to handle a header with cross-organizati
 
 ## Redirect to `dirhtml`
 
-2i2c's documentation uses the `dirhtml` builder so that pages exist at `pagename/index.html` instead of `pagename.html`.
-However, the Sphinx default uses the `html` builder, and our documentation is often already built this way.
-This theme includes a helper event callback that does two things:
+2i2c's documentation uses the `dirhtml` builder so that links look like `mysite.org/pagename` instead of `mysite.org/pagename.html`.[^1]
+However, the Sphinx default uses the `html` builder, and our documentation often has historical links from earlier iterations where we used the `html` builder.
 
-- If `dirhtml` is the builder, create files to redirect `pagename.html` to `pagename/index.html`.
+[^1]: In practice, this creates a file at `pagename/index.html`.
+      When a user visits `mysite.org/pagename`, the browser tells you it is a directory.
+      By default, browsers will then look for an `index.html` file in that directory and display it.
+
+To avoid broken links, this theme includes a helper event callback that does two things:
+
+- If `dirhtml` is the builder, create files so that `pagename.html` redirects to `pagename`.
   This ensures that old `html` builder links redirect.
 - If `html` is the builder, raise a warning that the `dirhtml` builder should be used instead.
 

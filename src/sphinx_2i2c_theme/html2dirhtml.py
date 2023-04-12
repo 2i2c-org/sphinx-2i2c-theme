@@ -21,7 +21,7 @@ REDIRECT_TEMPLATE = """
 """
 
 def redirect_from_html_to_dirhtml(app, pagename, templatename, context, doctree):
-    """If the dirhtml builder is used, redirect pagename.html to pagename/index.html"""
+    """If dirhtml builder is used, redirect pagename.html to the directory `pagename`"""
     if not hasattr(app, "builder"):
         return
     if app.builder.name == "dirhtml":
@@ -33,7 +33,7 @@ def redirect_from_html_to_dirhtml(app, pagename, templatename, context, doctree)
         path_html.parent.mkdir(exist_ok=True, parents=True)
         path_html.write_text(REDIRECT_TEMPLATE.format(rel_url=page_folder))
 
-        LOGGER.info(f"Redirecting {pagename}.html to {pagename}/index.html")
+        LOGGER.info(f"Redirecting {pagename}.html to {pagename}")
 
     elif app.builder.name == "html":
         LOGGER.warn("Use the dirhtml builder instead of html builder!")
