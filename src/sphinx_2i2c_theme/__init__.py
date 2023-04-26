@@ -43,6 +43,10 @@ def update_config(app):
             "name": "Mastodon",
             "url": "https://hachyderm.io/@2i2c_org",
             "icon": "fa-brands fa-mastodon",
+            # This allows us to verify this page in Mastodon
+            "attributes": {
+               "rel" : "me",
+            },
         },
         {
             "name": "Contact",
