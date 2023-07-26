@@ -107,7 +107,8 @@ def setup(app):
     app.config.templates_path.append(str(theme_path / "components"))
 
     # Link to the Mozilla CDN because downloading locally doesn't seem to work
-    app.add_css_file("https://fonts.cdnfonts.com/css/fira-sans-book")
+    app.add_css_file("https://fonts.gstatic.com", rel="preconnect")
+    app.add_css_file("https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans")
 
     add_extensions = ["sphinx_copybutton", "sphinx_togglebutton", "sphinxext.opengraph", "sphinx.ext.intersphinx"]
     activate_extensions(app, add_extensions)
