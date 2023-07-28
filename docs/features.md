@@ -37,7 +37,7 @@ It adds a header that provides site-wide links across all of our documentation.
 
 ## CSS and visual style
 
-We download the Mozilla Fira CSS and embed it in our side, since this is what our logo uses.
+We download the "Poppins" and "Work Sans" fonts from Google Fonts and embed it in our side, since this is what our logo uses.
 
 We also define several custom CSS rules to handle a header with cross-organization links.
 

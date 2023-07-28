@@ -1,12 +1,14 @@
 /* Overriding Book Theme colors to standardize for 2i2c */
-:root {
+:root[data-theme=light], :root[data-theme=dark] {
   --pst-font-size-base: none;
-  --pst-color-primary: rgb(87, 154, 202);
-  --pst-color-secondary: rgb(208, 102, 129);
+  --pst-font-family-heading: "poppins";
+  --pst-font-family-base: "Work Sans";
+  --pst-color-primary: rgb(29, 78, 245);
+  --pst-color-secondary: rgb(225, 78, 79);
   --pst-color-navbar-link-active: var(--pst-color-primary);
   --pst-color-sidebar-link-active: var(--pst-color-primary);
   --pst-color-link: var(--pst-color-primary);
-  --logo-bold: 700;
+  --logo-bold: 800;
 }
 
 // Copied from sphinx-book-theme
