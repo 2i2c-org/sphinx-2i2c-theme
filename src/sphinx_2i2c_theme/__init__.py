@@ -106,10 +106,10 @@ def setup(app):
     theme_path = here / "theme" / "sphinx-2i2c-theme"
     app.config.templates_path.append(str(theme_path / "components"))
 
-    # Link to the Mozilla CDN because downloading locally doesn't seem to work
+    # Use the Google Fonts CDN to quickly load our fonts
+    # ref: https://developers.google.com/fonts/docs/css2
     app.add_css_file("https://fonts.gstatic.com", rel="preconnect")
-    app.add_css_file("https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans")
-
+    app.add_css_file("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Work+Sans:wght@400;700")
     add_extensions = ["sphinx_copybutton", "sphinx_togglebutton", "sphinxext.opengraph", "sphinx.ext.intersphinx"]
     activate_extensions(app, add_extensions)
 
