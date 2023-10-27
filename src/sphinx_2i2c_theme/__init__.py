@@ -36,7 +36,7 @@ def update_config(app):
     icon_links = [
         {
             "name": "Twitter",
-            "url": "https://twitter.com/2i2c-org",
+            "url": "https://twitter.com/2i2c_org",
             "icon": "fa-brands fa-twitter",
         },
         {
