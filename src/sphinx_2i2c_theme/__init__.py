@@ -65,7 +65,7 @@ def update_config(app):
 
 def hash_html_assets(app, pagename, templatename, context, doctree):
     assets = ["styles/sphinx-2i2c-theme.css"]
-    hash_assets_for_files(assets, THEME_PATH / "static", context)
+    hash_assets_for_files(assets, THEME_PATH / "static", context, app)
 
 
 def activate_extensions(app, extensions):
