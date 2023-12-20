@@ -11,6 +11,11 @@
   --logo-bold: 800;
 }
 
+/* Dark mode special-cases (usually for accessibility) */
+:root[data-theme=dark] {
+  --pst-color-primary: #5077FC;
+}
+
 // Copied from sphinx-book-theme
 // Breakpoints from Bootstrap: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 $breakpoint-xxl: 1200px;
