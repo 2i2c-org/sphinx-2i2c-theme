@@ -22,7 +22,7 @@ def update_config(app):
         app.config.ogp_site_url = "2i2c.org"
 
     # Social previews config
-    social_cards = app.config.__dict__.get("ogp_social_cards", {})
+    social_cards = app.config.__dict__.get("ogp_social_cards") or {}
 
     # If no html_logo is set then use a stock 2i2c logo
     if not config_provided_by_user(app, "html_logo") and not social_cards.get("image"):
