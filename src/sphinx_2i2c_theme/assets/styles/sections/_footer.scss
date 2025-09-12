@@ -1,9 +1,18 @@
+// Remove the content footer because we don't use it
+footer.bd-footer-content {
+  display: none;
+}
+.bd-content {
+  padding-bottom: 1em; // A bit of extra space since the content footer is gone
+}
+
 // The icon links to the right
 .bd-footer .footer-items__end {
   justify-content: start;
 
   .navbar-icon-links {
     flex-direction: row-reverse;
+    justify-content: right;
   }
 }
 
