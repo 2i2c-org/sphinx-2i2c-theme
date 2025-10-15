@@ -29,9 +29,3 @@
     }
   }
 }
-
-// Both sidebars (if the secondary sidebar gets many more rules, create its own SCSS file)
-.bd-sidebar-primary, .bd-sidebar-secondary {
-  // Stick to the top
-  top: 0;
-}
